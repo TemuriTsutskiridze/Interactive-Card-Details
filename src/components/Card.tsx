@@ -5,19 +5,32 @@ import BgCardBack from "../assets/images/bg-card-back.png";
 import BgCardFront from "../assets/images/bg-card-front.png";
 import CardLogo from "../assets/icons/card-logo.svg";
 
-export default function Card() {
+interface ICard {
+  cardName: string;
+  cardNumber: string;
+  expMonth: string;
+  expYear: string;
+  CVC: string;
+}
+
+export default function Card(props: ICard) {
   return (
     <Background>
       <CardContainer>
         <CardBack>
-          <CVC>000</CVC>
+          <CVC>{props.CVC === "" ? "000" : props.CVC}</CVC>
         </CardBack>
         <CardFront>
           <CardFrontIcon src={CardLogo}></CardFrontIcon>
-          <CardNumber>0000 0000 0000 0000</CardNumber>
+          <CardNumber>
+            {props.cardNumber === "" ? "0000 0000 0000 0000" : props.cardNumber}
+          </CardNumber>
           <NameAndExp>
-            <Name>JANE APPLESEED</Name>
-            <Exp>00/00</Exp>
+            <Name>{props.cardName === "" ? "Your Name" : props.cardName}</Name>
+            <Exp>
+              {props.expMonth === "" ? "00" : props.expMonth}/
+              {props.expYear === "" ? "00" : props.expYear}
+            </Exp>
           </NameAndExp>
         </CardFront>
       </CardContainer>

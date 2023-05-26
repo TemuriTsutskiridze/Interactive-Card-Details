@@ -1,13 +1,28 @@
 import styled, { css } from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { useEffect } from "react";
 
 interface IFormProps {
   form: boolean;
   setForm: React.Dispatch<React.SetStateAction<boolean>>;
+  setCardName: React.Dispatch<React.SetStateAction<string>>;
+  setCardNumber: React.Dispatch<React.SetStateAction<string>>;
+  setExpMonth: React.Dispatch<React.SetStateAction<string>>;
+  setExpYear: React.Dispatch<React.SetStateAction<string>>;
+  setCVC: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export default function Form(props: IFormProps) {
+  const {
+    form,
+    setForm,
+    setCardName,
+    setCardNumber,
+    setExpMonth,
+    setExpYear,
+    setCVC,
+  } = props;
   const formik: any = useFormik({
     // Formik Logics
 
@@ -44,6 +59,26 @@ export default function Form(props: IFormProps) {
   //   event?.preventDefault();
   //   props.setForm(false);
   // }
+
+  useEffect(() => {
+    setCardName(formik.values.name);
+  }, [formik.values.name, setCardName]);
+
+  useEffect(() => {
+    setCardNumber(formik.values.cardNumber);
+  }, [formik.values.cardNumber, setCardNumber]);
+
+  useEffect(() => {
+    setExpMonth(formik.values.expDateMonth);
+  }, [formik.values.expDateMonth, setExpMonth]);
+
+  useEffect(() => {
+    setExpYear(formik.values.expDateYear);
+  }, [formik.values.expDateYear, setExpYear]);
+
+  useEffect(() => {
+    setCVC(formik.values.CVC);
+  }, [formik.values.CVC, setCVC]);
 
   return (
     <FormContainer onSubmit={formik.handleSubmit}>
@@ -85,14 +120,38 @@ export default function Form(props: IFormProps) {
             <Input
               placeholder="MM"
               name="expDateMonth"
+              type="number"
               value={formik.values.expDateMonth}
-              onChange={formik.handleChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = e.target;
+                if (value.length <= 2) {
+                  formik.handleChange(e);
+                }
+              }}
+              onBlur={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = e.target;
+                const changedValue = value.padStart(2, "0");
+                setExpMonth(changedValue);
+                formik.setFieldValue("expDateMonth", changedValue);
+              }}
             ></Input>
             <Input
               placeholder="YY"
               name="expDateYear"
+              maxLength={2}
               value={formik.values.expDateYear}
-              onChange={formik.handleChange}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = e.target;
+                if (value.length <= 2) {
+                  formik.handleChange(e);
+                }
+              }}
+              onBlur={(e: React.ChangeEvent<HTMLInputElement>) => {
+                const { value } = e.target;
+                const changedValue = value.padStart(2, "0");
+                setExpYear(changedValue);
+                formik.setFieldValue("expDateYear", changedValue);
+              }}
             ></Input>
           </MonthYearContainer>
         </InputContainer>
@@ -104,7 +163,12 @@ export default function Form(props: IFormProps) {
             type="number"
             name="CVC"
             value={formik.values.CVC}
-            onChange={formik.handleChange}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              const { value } = e.target;
+              if (value.length <= 3) {
+                formik.handleChange(e);
+              }
+            }}
           ></Input>
         </InputContainer>
       </EXP_CVC_Input_Container>
