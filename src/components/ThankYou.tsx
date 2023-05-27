@@ -5,7 +5,6 @@ import IconComplete from "../assets/icons/icon-complete.svg";
 import { Button } from "./Form";
 
 interface IFormProps {
-  form: boolean;
   setForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 

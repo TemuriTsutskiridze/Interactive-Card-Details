@@ -13,8 +13,6 @@ function App() {
   const [expYear, setExpYear] = useState<string>("");
   const [CVC, setCVC] = useState<string>("");
 
-  console.log(expYear);
-
   return (
     <>
       <GlobalStyles />
@@ -27,7 +25,6 @@ function App() {
       />
       {form ? (
         <Form
-          form={form}
           setForm={setForm}
           setCardName={setCardName}
           setCardNumber={setCardNumber}
@@ -36,7 +33,7 @@ function App() {
           setCVC={setCVC}
         />
       ) : (
-        <ThankYou form={form} setForm={setForm} />
+        <ThankYou setForm={setForm} />
       )}
     </>
   );
