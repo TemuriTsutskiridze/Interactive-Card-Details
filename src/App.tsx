@@ -8,7 +8,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [form, setForm] = useState<boolean>(false);
+  const [form, setForm] = useState<boolean>(true);
   const [cardName, setCardName] = useState<string>("");
   const [cardNumber, setCardNumber] = useState<string>("");
   const [expMonth, setExpMonth] = useState<string>("");
