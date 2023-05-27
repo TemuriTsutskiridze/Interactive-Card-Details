@@ -3,7 +3,7 @@ import { GlobalStyles } from "./components/Globals";
 import Card from "./components/Card";
 import Form from "./components/Form";
 import ThankYou from "./components/ThankYou";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { AnimatePresence } from "framer-motion";
 
