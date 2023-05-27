@@ -16,7 +16,7 @@ function App() {
   const [CVC, setCVC] = useState<string>("");
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={true}>
       <GlobalStyles />
       <Card
         key={"card"}
