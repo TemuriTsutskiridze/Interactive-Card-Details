@@ -2,7 +2,12 @@ import styled from "styled-components";
 
 import IconComplete from "../assets/icons/icon-complete.svg";
 
+import { useState, useEffect } from "react";
+
 import { Button } from "./Form";
+
+import { motion as m } from "framer-motion";
+import Confetti from "react-confetti";
 
 interface IFormProps {
   setForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -13,19 +18,32 @@ export default function ThankYou(props: IFormProps) {
     props.setForm(true);
   }
 
+  const [pieces, setPieces] = useState(300);
+
+  const stopConfetti = () => {
+    setTimeout(() => {
+      setPieces(0);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    stopConfetti();
+  }, []);
+
   return (
-    <ThankYouContainer>
+    <ThankYouContainer initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <CheckImage></CheckImage>
       <Thanks>THANK YOU!</Thanks>
       <ThanksTxt>We’ve added your card details</ThanksTxt>
       <Button style={{ marginTop: "4.5rem" }} onClick={handleContinue}>
         Continue
       </Button>
+      <Confetti gravity={0.3} numberOfPieces={pieces} />
     </ThankYouContainer>
   );
 }
 
-const ThankYouContainer = styled.div`
+const ThankYouContainer = styled(m.div)`
   width: 32.7rem;
   display: flex;
   flex-direction: column;

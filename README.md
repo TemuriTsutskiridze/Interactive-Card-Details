@@ -12,6 +12,8 @@
 - Styled Components
 - Yup
 - Formik
+- Framer Motion
+- React-Confetti
 
 ## Getting Started
 

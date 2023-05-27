@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useEffect } from "react";
+import { motion as m } from "framer-motion";
 
 interface IFormProps {
   setForm: React.Dispatch<React.SetStateAction<boolean>>;
@@ -106,7 +107,11 @@ export default function Form(props: IFormProps) {
   }, [formik.values.CVC, setCVC]);
 
   return (
-    <FormContainer onSubmit={formik.handleSubmit}>
+    <FormContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      onSubmit={formik.handleSubmit}
+    >
       <InputContainer width="100%">
         <InputContainerName htmlFor="name">
           {formik.touched.name && formik.errors.name ? (
@@ -227,7 +232,7 @@ export default function Form(props: IFormProps) {
   );
 }
 
-const FormContainer = styled.form`
+const FormContainer = styled(m.form)`
   width: 32.7rem;
   display: flex;
   flex-direction: column;
