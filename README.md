@@ -4,19 +4,37 @@
 
 ## [Live URL](https://interactive-card-details-sable.vercel.app)
 
-## Made with
+## Design Preview
 
-1. Vite
-2. React
-3. Typescript
-4. Styled Components
-5. Formik
-6. Yup
+![Image1](./public/design-preview/active-states.jpg)
+![Image2](./public/design-preview/complete-state-desktop.jpg)
+![Image3](./public/design-preview/complete-state-mobile.jpg)
+![Image4](./public/design-preview/desktop-design.jpg)
+![Image5](./public/design-preview/desktop-preview.jpg)
+![Image6](./public/design-preview/mobile-design.jpg)
 
-## How to download
+## Technologies Used
 
-1. Clone repository
-2. Go into project folder
-3. run `npm install` in terminal to download node modules
+- Vite
+- React
+- TypeScript
+- Styled Components
+- Yup
+- Formik
 
-4. run "npm install styled-components" to install styled-components ("yarn add styled-components" if you use yarn) + run "npm install --save-dev @types/styled-components" to install TypeScript definitions on DefinitelyTyped
+## Getting Started
+
+To get a local copy of the project up and running, follow these steps:
+
+1.  Clone the repository:
+
+    ```shell
+    git clone https://github.com/your-username/project-name.git
+    ```
+
+2.  Install the dependencies:
+
+    ```shell
+    cd project-name
+    npm install
+    ```
