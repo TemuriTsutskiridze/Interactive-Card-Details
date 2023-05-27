@@ -4,15 +4,6 @@
 
 ## [Live URL](https://interactive-card-details-sable.vercel.app)
 
-## Design Preview
-
-![Image1](./public/design-preview/active-states.jpg)
-![Image2](./public/design-preview/complete-state-desktop.jpg)
-![Image3](./public/design-preview/complete-state-mobile.jpg)
-![Image4](./public/design-preview/desktop-design.jpg)
-![Image5](./public/design-preview/desktop-preview.jpg)
-![Image6](./public/design-preview/mobile-design.jpg)
-
 ## Technologies Used
 
 - Vite
@@ -38,3 +29,12 @@ To get a local copy of the project up and running, follow these steps:
     cd project-name
     npm install
     ```
+
+## Design Preview
+
+![Image1](./public/design-preview/active-states.jpg)
+![Image2](./public/design-preview/complete-state-desktop.jpg)
+![Image3](./public/design-preview/complete-state-mobile.jpg)
+![Image4](./public/design-preview/desktop-design.jpg)
+![Image5](./public/design-preview/desktop-preview.jpg)
+![Image6](./public/design-preview/mobile-design.jpg)
