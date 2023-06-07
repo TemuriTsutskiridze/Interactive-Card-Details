@@ -2,7 +2,7 @@
 
 ## [Design(Figma)](https://www.figma.com/file/tghNo2lZaUyBeM3NUWIpBS/interactive-card-details-form?type=design&node-id=0-361&t=5jmioPGoKa3SyqFc-0)
 
-## [Live URL](https://interactive-card-details-sable.vercel.app)
+## [Live URL](https://interactive-card-details-ashy.vercel.app)
 
 ## Technologies Used
 
@@ -14,6 +14,7 @@
 - Formik
 - Framer Motion
 - React-Confetti
+- Vercel (for deployment)
 
 ## Getting Started
 
