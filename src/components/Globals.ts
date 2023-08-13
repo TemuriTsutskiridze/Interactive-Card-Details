@@ -31,4 +31,8 @@ export const GlobalStyles = createGlobalStyle`
             padding: 0;
         }
     }
+
+    canvas {
+        width: 100vw;
+    }
 `;
